@@ -1,0 +1,11 @@
+Metric,Value
+Total Number of Qubits,156
+E_total (Total Error Sum),1.2658691440000005
+Average Error,0.008115
+p_phys^total (Total Physical Error Rate),0.001
+Code Distance (d),5
+(d+1)/2,3.0
+p_th (Error Threshold),0.01
+C_Surface_code,0.1
+Total p_L,1.000000e-04
+Average D_A,3.711

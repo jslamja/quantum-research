@@ -1,0 +1,198 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[arabic]{babel}
+
+\title{تحليل أخطاء قراءة الكيوبتات حسب الفئات}
+\author{نظام تحليل أخطاء الكم}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{ملخص النظام}
+
+\begin{table}[H]
+\centering
+\caption{المتغيرات الكلية للنظام}
+\begin{tabular}{lr}
+\toprule
+\textbf{المتغير} & \textbf{القيمة} \\
+\midrule
+إجمالي عدد الكيوبتات & 155 \\
+E_total (مجموع الأخطاء الكلي) & 0.7084912025561223 \\
+متوسط الخطأ & 0.004571 \\
+p_phys^total (معدل الخطأ المادي الكلي) & 0.001 \\
+مسافة الكود (d) & 5 \\
+(d+1)/2 & 3.0 \\
+p_th (عتبة الخطأ) & 0.01 \\
+C_Surface_code & 0.1 \\
+p_L الكلي & 1.000000e-04 \\
+متوسط D_A & 2.425 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{تحليل الفئات التفصيلي}
+
+
+\subsection{Category_A}
+
+\begin{table}[H]
+\centering
+\caption{تحليل فئة Category_A (نطاق الخطأ: 0 - 0.003)}
+\begin{tabular}{lr}
+\toprule
+\textbf{المتغير} & \textbf{القيمة} \\
+\midrule
+عدد الكيوبتات ($|A|$) & 89 \\
+$E_A$ & 0.098328 \\
+$R_A$ & 0.138786 \\
+$R_A/|A|$ & 0.001559 \\
+$D_A$ & 0.242 \\
+$p_{\text{phys}}^{(A)}$ & 1.387856e-04 \\
+$p_L$ & 2.673208e-07 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+المعادلات المستخدمة:
+\begin{align}
+E_A &= \sum_{i \in A} e_i = 0.098328 \\
+R_A &= \frac{E_A}{E_{\text{total}}} = \frac{0.098328}{0.708491} = 0.138786 \\
+R_A/|A| &= \frac{R_A}{|A|} = \frac{0.138786}{89} = 0.001559 \\
+D_A &= \frac{R_A/|A|}{1/N} = \frac{0.001559}{0.006452} = 0.242 \\
+p_{\text{phys}}^{(A)} &= R_A \cdot p_{\text{phys}}^{\text{total}} = 0.138786 \times 0.001 = 1.387856e-04 \\
+p_L &= C \left( \frac{p_{\text{phys}}^{(A)}}{p_{\text{th}}} \right)^{(d+1)/2} = 0.1 \times \left(\frac{1.387856e-04}{0.01}\right)^{3.0} = 2.673208e-07
+\end{align}
+
+\subsection{Category_B}
+
+\begin{table}[H]
+\centering
+\caption{تحليل فئة Category_B (نطاق الخطأ: 0.003 - 0.005)}
+\begin{tabular}{lr}
+\toprule
+\textbf{المتغير} & \textbf{القيمة} \\
+\midrule
+عدد الكيوبتات ($|A|$) & 20 \\
+$E_A$ & 0.082982 \\
+$R_A$ & 0.117125 \\
+$R_A/|A|$ & 0.005856 \\
+$D_A$ & 0.908 \\
+$p_{\text{phys}}^{(A)}$ & 1.171245e-04 \\
+$p_L$ & 1.606733e-07 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+المعادلات المستخدمة:
+\begin{align}
+E_A &= \sum_{i \in A} e_i = 0.082982 \\
+R_A &= \frac{E_A}{E_{\text{total}}} = \frac{0.082982}{0.708491} = 0.117125 \\
+R_A/|A| &= \frac{R_A}{|A|} = \frac{0.117125}{20} = 0.005856 \\
+D_A &= \frac{R_A/|A|}{1/N} = \frac{0.005856}{0.006452} = 0.908 \\
+p_{\text{phys}}^{(A)} &= R_A \cdot p_{\text{phys}}^{\text{total}} = 0.117125 \times 0.001 = 1.171245e-04 \\
+p_L &= C \left( \frac{p_{\text{phys}}^{(A)}}{p_{\text{th}}} \right)^{(d+1)/2} = 0.1 \times \left(\frac{1.171245e-04}{0.01}\right)^{3.0} = 1.606733e-07
+\end{align}
+
+\subsection{Category_C}
+
+\begin{table}[H]
+\centering
+\caption{تحليل فئة Category_C (نطاق الخطأ: 0.005 - 0.01)}
+\begin{tabular}{lr}
+\toprule
+\textbf{المتغير} & \textbf{القيمة} \\
+\midrule
+عدد الكيوبتات ($|A|$) & 31 \\
+$E_A$ & 0.204017 \\
+$R_A$ & 0.287960 \\
+$R_A/|A|$ & 0.009289 \\
+$D_A$ & 1.440 \\
+$p_{\text{phys}}^{(A)}$ & 2.879598e-04 \\
+$p_L$ & 2.387787e-06 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+المعادلات المستخدمة:
+\begin{align}
+E_A &= \sum_{i \in A} e_i = 0.204017 \\
+R_A &= \frac{E_A}{E_{\text{total}}} = \frac{0.204017}{0.708491} = 0.287960 \\
+R_A/|A| &= \frac{R_A}{|A|} = \frac{0.287960}{31} = 0.009289 \\
+D_A &= \frac{R_A/|A|}{1/N} = \frac{0.009289}{0.006452} = 1.440 \\
+p_{\text{phys}}^{(A)} &= R_A \cdot p_{\text{phys}}^{\text{total}} = 0.287960 \times 0.001 = 2.879598e-04 \\
+p_L &= C \left( \frac{p_{\text{phys}}^{(A)}}{p_{\text{th}}} \right)^{(d+1)/2} = 0.1 \times \left(\frac{2.879598e-04}{0.01}\right)^{3.0} = 2.387787e-06
+\end{align}
+
+\subsection{Category_D}
+
+\begin{table}[H]
+\centering
+\caption{تحليل فئة Category_D (نطاق الخطأ: 0.01 - 0.02)}
+\begin{tabular}{lr}
+\toprule
+\textbf{المتغير} & \textbf{القيمة} \\
+\midrule
+عدد الكيوبتات ($|A|$) & 8 \\
+$E_A$ & 0.143835 \\
+$R_A$ & 0.203015 \\
+$R_A/|A|$ & 0.025377 \\
+$D_A$ & 3.933 \\
+$p_{\text{phys}}^{(A)}$ & 2.030153e-04 \\
+$p_L$ & 8.367318e-07 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+المعادلات المستخدمة:
+\begin{align}
+E_A &= \sum_{i \in A} e_i = 0.143835 \\
+R_A &= \frac{E_A}{E_{\text{total}}} = \frac{0.143835}{0.708491} = 0.203015 \\
+R_A/|A| &= \frac{R_A}{|A|} = \frac{0.203015}{8} = 0.025377 \\
+D_A &= \frac{R_A/|A|}{1/N} = \frac{0.025377}{0.006452} = 3.933 \\
+p_{\text{phys}}^{(A)} &= R_A \cdot p_{\text{phys}}^{\text{total}} = 0.203015 \times 0.001 = 2.030153e-04 \\
+p_L &= C \left( \frac{p_{\text{phys}}^{(A)}}{p_{\text{th}}} \right)^{(d+1)/2} = 0.1 \times \left(\frac{2.030153e-04}{0.01}\right)^{3.0} = 8.367318e-07
+\end{align}
+
+\subsection{Category_E}
+
+\begin{table}[H]
+\centering
+\caption{تحليل فئة Category_E (نطاق الخطأ: 0.02 - inf)}
+\begin{tabular}{lr}
+\toprule
+\textbf{المتغير} & \textbf{القيمة} \\
+\midrule
+عدد الكيوبتات ($|A|$) & 7 \\
+$E_A$ & 0.179330 \\
+$R_A$ & 0.253115 \\
+$R_A/|A|$ & 0.036159 \\
+$D_A$ & 5.605 \\
+$p_{\text{phys}}^{(A)}$ & 2.531148e-04 \\
+$p_L$ & 1.621634e-06 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+المعادلات المستخدمة:
+\begin{align}
+E_A &= \sum_{i \in A} e_i = 0.179330 \\
+R_A &= \frac{E_A}{E_{\text{total}}} = \frac{0.179330}{0.708491} = 0.253115 \\
+R_A/|A| &= \frac{R_A}{|A|} = \frac{0.253115}{7} = 0.036159 \\
+D_A &= \frac{R_A/|A|}{1/N} = \frac{0.036159}{0.006452} = 5.605 \\
+p_{\text{phys}}^{(A)} &= R_A \cdot p_{\text{phys}}^{\text{total}} = 0.253115 \times 0.001 = 2.531148e-04 \\
+p_L &= C \left( \frac{p_{\text{phys}}^{(A)}}{p_{\text{th}}} \right)^{(d+1)/2} = 0.1 \times \left(\frac{2.531148e-04}{0.01}\right)^{3.0} = 1.621634e-06
+\end{align}
+
+\section{الخاتمة}
+يظهر هذا التحليل التوزيع غير المتجانس لأخطاء قراءة الكيوبتات وتأثيرها على أداء التصحيح الخطأ الكمي. تبرز الفئات ذات $D_A > 1$ كعوامل محددة للأداء وتستحق اهتمامًا خاصًا في تحسين الأجهزة وتحسين الخوارزميات.
+
+\end{document}

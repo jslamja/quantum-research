@@ -1,0 +1,197 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{float}
+
+\title{Qubit Readout Error Analysis by Category}
+\author{Quantum Error Analysis System}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{System Summary}
+
+\begin{table}[H]
+\centering
+\caption{Global System Variables}
+\begin{tabular}{lr}
+\toprule
+\textbf{Variable} & \textbf{Value} \\
+\midrule
+Total Number of Qubits & 156 \\
+E_total (Total Error Sum) & 1.2658691440000005 \\
+Average Error & 0.008115 \\
+p_phys^total (Total Physical Error Rate) & 0.001 \\
+Code Distance (d) & 5 \\
+(d+1)/2 & 3.0 \\
+p_th (Error Threshold) & 0.01 \\
+C_Surface_code & 0.1 \\
+Total p_L & 1.000000e-04 \\
+Average D_A & 3.711 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Detailed Category Analysis}
+
+
+\subsection{Category_A}
+
+egin{table}[H]
+\centering
+\caption{Analysis of Category_A Category (Error Range: 0 - 0.003)}
+egin{tabular}{lr}
+	oprule
+	extbf{Variable} & 	extbf{Value} \
+\midrule
+Number of Qubits ($|A|$) & 19 \
+$E_A$ & 0.048584 \
+$R_A$ & 0.038380 \
+$R_A/|A|$ & 0.002020 \
+$D_A$ & 0.315 \
+$p_{	ext{phys}}^{(A)}$ & 3.837994e-05 \
+$p_L$ & 5.653443e-09 \
+ottomrule
+\end{tabular}
+\end{table}
+
+Equations Used:
+egin{align}
+E_A &= \sum_{i \in A} e_i = 0.048584 \
+R_A &= rac{E_A}{E_{	ext{total}}} = rac{0.048584}{1.265869} = 0.038380 \
+R_A/|A| &= rac{R_A}{|A|} = rac{0.038380}{19} = 0.002020 \
+D_A &= rac{R_A/|A|}{1/N} = rac{0.002020}{0.006410} = 0.315 \
+p_{	ext{phys}}^{(A)} &= R_A \cdot p_{	ext{phys}}^{	ext{total}} = 0.038380 	imes 0.001 = 3.837994e-05 \
+p_L &= C \left( rac{p_{	ext{phys}}^{(A)}}{p_{	ext{th}}} ight)^{(d+1)/2} = 0.1 	imes \left(rac{3.837994e-05}{0.01}ight)^{3.0} = 5.653443e-09
+\end{align}
+
+\subsection{Category_B}
+
+egin{table}[H]
+\centering
+\caption{Analysis of Category_B Category (Error Range: 0.003 - 0.005)}
+egin{tabular}{lr}
+	oprule
+	extbf{Variable} & 	extbf{Value} \
+\midrule
+Number of Qubits ($|A|$) & 57 \
+$E_A$ & 0.219116 \
+$R_A$ & 0.173095 \
+$R_A/|A|$ & 0.003037 \
+$D_A$ & 0.474 \
+$p_{	ext{phys}}^{(A)}$ & 1.730955e-04 \
+$p_L$ & 5.186293e-07 \
+ottomrule
+\end{tabular}
+\end{table}
+
+Equations Used:
+egin{align}
+E_A &= \sum_{i \in A} e_i = 0.219116 \
+R_A &= rac{E_A}{E_{	ext{total}}} = rac{0.219116}{1.265869} = 0.173095 \
+R_A/|A| &= rac{R_A}{|A|} = rac{0.173095}{57} = 0.003037 \
+D_A &= rac{R_A/|A|}{1/N} = rac{0.003037}{0.006410} = 0.474 \
+p_{	ext{phys}}^{(A)} &= R_A \cdot p_{	ext{phys}}^{	ext{total}} = 0.173095 	imes 0.001 = 1.730955e-04 \
+p_L &= C \left( rac{p_{	ext{phys}}^{(A)}}{p_{	ext{th}}} ight)^{(d+1)/2} = 0.1 	imes \left(rac{1.730955e-04}{0.01}ight)^{3.0} = 5.186293e-07
+\end{align}
+
+\subsection{Category_C}
+
+egin{table}[H]
+\centering
+\caption{Analysis of Category_C Category (Error Range: 0.005 - 0.01)}
+egin{tabular}{lr}
+	oprule
+	extbf{Variable} & 	extbf{Value} \
+\midrule
+Number of Qubits ($|A|$) & 62 \
+$E_A$ & 0.421143 \
+$R_A$ & 0.332690 \
+$R_A/|A|$ & 0.005366 \
+$D_A$ & 0.837 \
+$p_{	ext{phys}}^{(A)}$ & 3.326905e-04 \
+$p_L$ & 3.682316e-06 \
+ottomrule
+\end{tabular}
+\end{table}
+
+Equations Used:
+egin{align}
+E_A &= \sum_{i \in A} e_i = 0.421143 \
+R_A &= rac{E_A}{E_{	ext{total}}} = rac{0.421143}{1.265869} = 0.332690 \
+R_A/|A| &= rac{R_A}{|A|} = rac{0.332690}{62} = 0.005366 \
+D_A &= rac{R_A/|A|}{1/N} = rac{0.005366}{0.006410} = 0.837 \
+p_{	ext{phys}}^{(A)} &= R_A \cdot p_{	ext{phys}}^{	ext{total}} = 0.332690 	imes 0.001 = 3.326905e-04 \
+p_L &= C \left( rac{p_{	ext{phys}}^{(A)}}{p_{	ext{th}}} ight)^{(d+1)/2} = 0.1 	imes \left(rac{3.326905e-04}{0.01}ight)^{3.0} = 3.682316e-06
+\end{align}
+
+\subsection{Category_D}
+
+egin{table}[H]
+\centering
+\caption{Analysis of Category_D Category (Error Range: 0.01 - 0.02)}
+egin{tabular}{lr}
+	oprule
+	extbf{Variable} & 	extbf{Value} \
+\midrule
+Number of Qubits ($|A|$) & 15 \
+$E_A$ & 0.206177 \
+$R_A$ & 0.162874 \
+$R_A/|A|$ & 0.010858 \
+$D_A$ & 1.694 \
+$p_{	ext{phys}}^{(A)}$ & 1.628737e-04 \
+$p_L$ & 4.320686e-07 \
+ottomrule
+\end{tabular}
+\end{table}
+
+Equations Used:
+egin{align}
+E_A &= \sum_{i \in A} e_i = 0.206177 \
+R_A &= rac{E_A}{E_{	ext{total}}} = rac{0.206177}{1.265869} = 0.162874 \
+R_A/|A| &= rac{R_A}{|A|} = rac{0.162874}{15} = 0.010858 \
+D_A &= rac{R_A/|A|}{1/N} = rac{0.010858}{0.006410} = 1.694 \
+p_{	ext{phys}}^{(A)} &= R_A \cdot p_{	ext{phys}}^{	ext{total}} = 0.162874 	imes 0.001 = 1.628737e-04 \
+p_L &= C \left( rac{p_{	ext{phys}}^{(A)}}{p_{	ext{th}}} ight)^{(d+1)/2} = 0.1 	imes \left(rac{1.628737e-04}{0.01}ight)^{3.0} = 4.320686e-07
+\end{align}
+
+\subsection{Category_E}
+
+egin{table}[H]
+\centering
+\caption{Analysis of Category_E Category (Error Range: 0.02 - inf)}
+egin{tabular}{lr}
+	oprule
+	extbf{Variable} & 	extbf{Value} \
+\midrule
+Number of Qubits ($|A|$) & 3 \
+$E_A$ & 0.370850 \
+$R_A$ & 0.292960 \
+$R_A/|A|$ & 0.097653 \
+$D_A$ & 15.234 \
+$p_{	ext{phys}}^{(A)}$ & 2.929605e-04 \
+$p_L$ & 2.514358e-06 \
+ottomrule
+\end{tabular}
+\end{table}
+
+Equations Used:
+egin{align}
+E_A &= \sum_{i \in A} e_i = 0.370850 \
+R_A &= rac{E_A}{E_{	ext{total}}} = rac{0.370850}{1.265869} = 0.292960 \
+R_A/|A| &= rac{R_A}{|A|} = rac{0.292960}{3} = 0.097653 \
+D_A &= rac{R_A/|A|}{1/N} = rac{0.097653}{0.006410} = 15.234 \
+p_{	ext{phys}}^{(A)} &= R_A \cdot p_{	ext{phys}}^{	ext{total}} = 0.292960 	imes 0.001 = 2.929605e-04 \
+p_L &= C \left( rac{p_{	ext{phys}}^{(A)}}{p_{	ext{th}}} ight)^{(d+1)/2} = 0.1 	imes \left(rac{2.929605e-04}{0.01}ight)^{3.0} = 2.514358e-06
+\end{align}
+
+\section{Conclusion}
+This analysis shows the heterogeneous distribution of qubit readout errors and their impact on quantum error correction performance. Categories with $D_A > 1$ emerge as performance-limiting factors and deserve special attention in hardware optimization and algorithm improvement.
+
+\end{document}
